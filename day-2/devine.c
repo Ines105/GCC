@@ -5,9 +5,9 @@
 int main() {
    int secret, essai, compteur = 0; 
    srand(time(NULL));
-
+    
    secret = rand() % 100 + 1;
-
+   char rejouer;
    do {
       printf("Devine le nombre (entre 1 et 100) : ");
       scanf("%d", &essai);
@@ -17,8 +17,10 @@ int main() {
          printf("Trop petit !\n");
       }  else if (essai > secret){                                                                                                                                       printf("Trop grand !\n");
                                                                                       }  else {
-                                                                                         printf("Bravo ! Tu as trouvé en %d essais.\n", compteur);                    }
-    } while (essai != secret);
+                                                                                         printf("Bravo ! Tu as trouvé en %d essais.\n", compteur);
+         printf("Veux-tu rejouer? (o/n) :");
+         scanf(" %c", &rejouer);                                                                         }
+    } while (rejouer == 'o' || rejouer == '0');
 
       return 0;
 }
